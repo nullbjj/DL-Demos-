@@ -53,7 +53,8 @@ class VQVAE(nn.Module):
         zq = self.vq_embedding(nearest_neighbor).permute(0, 3, 1, 2)
         # stop gradient
         decoder_input = ze + (zq - ze).detach()
-
+        
+        #sssss
         # decode
         x_hat = self.decoder(decoder_input)
         return x_hat, ze, zq
